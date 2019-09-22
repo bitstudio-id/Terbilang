@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - First release, 23-09-2019
 
-* TODO: Describe initial release.
+* support convert number to text with fraction
