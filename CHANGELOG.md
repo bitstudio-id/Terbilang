@@ -1,4 +1,4 @@
-## [1.0.0] - Up release v1, 24-09-2019
+## [1.0.2] - Up release v1, 24-09-2019
 * support for multiple language (id, en)
 * support fractional number
 * add prefix and suffix

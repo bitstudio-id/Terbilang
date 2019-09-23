@@ -19,7 +19,7 @@ Number to words conversion support multi language.
 ### Add dependency
 ```yaml
 dependencies:
-  terbilang: 1.0.0  #latest version
+  terbilang: 1.0.2  #latest version
 ```
 
 #### Pull Request
