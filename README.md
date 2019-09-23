@@ -15,7 +15,7 @@ Number to words conversion support multi language.
 * [Number Short Hand](https://github.com/bitstudio-id/terbilang#number-short-hand)
 * [Datetime to Word](https://github.com/bitstudio-id/terbilang#datetime)
 * [Period](https://github.com/bitstudio-id/terbilang#period)
-*
+
 ### Add dependency
 ```yaml
 dependencies:
