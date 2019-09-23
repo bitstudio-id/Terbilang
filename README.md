@@ -6,7 +6,7 @@ Convert number & date to words in any language for Flutter
 ### Add dependency
 ```yaml
 dependencies:
-  terbilang: any  #latest version
+  terbilang: 0.0.3  #latest version
 ```
 
 #### Pull Request
