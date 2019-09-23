@@ -4,6 +4,23 @@ import 'package:terbilang/src/terbilang.dart';
 void main() {
   group('Terbilang lang:id', () {
     final _terbilang = Terbilang();
+
+    test('test with prefix', () {
+      expect(_terbilang.make(number: 1200, prefix: "total"), "total seribu dua ratus");
+    });
+
+    test('test with suffix', () {
+      expect(_terbilang.make(number: 1200, suffix: "rupiah"), "seribu dua ratus rupiah");
+    });
+
+    test('test with prefix and suffix', () {
+      expect(_terbilang.make(number: 1200,  prefix: "senilai", suffix: "rupiah"), "senilai seribu dua ratus rupiah");
+    });
+
+    test('test nilai pecahan', () {
+      expect(_terbilang.make(number: 129.56), "seratus dua puluh sembilan koma lima enam");
+    });
+
     test('test nilai 1', () {
       expect(_terbilang.make(number: 1), "satu");
     });
@@ -35,6 +52,22 @@ void main() {
 
   group('Terbilang lang:en', () {
     final _terbilang = Terbilang(lang: "en");
+    test('test with prefix', () {
+      expect(_terbilang.make(number: 1200, prefix: "price :"), "price : one thousand, two hundred");
+    });
+
+    test('test with suffix', () {
+      expect(_terbilang.make(number: 1200, suffix: "dollars"), "one thousand, two hundred dollars");
+    });
+
+    test('test with prefix and suffix', () {
+      expect(_terbilang.make(number: 1200,  prefix: "price :", suffix: "dollars"), "price : one thousand, two hundred dollars");
+    });
+
+    test('test fractions', () {
+      expect(_terbilang.make(number: 129.56), "one hundred and twenty-nine point five six");
+    });
+
     test('test nilai 1', () {
       expect(_terbilang.make(number: 1), "one");
     });

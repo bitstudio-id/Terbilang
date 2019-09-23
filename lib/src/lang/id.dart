@@ -1,7 +1,7 @@
 Map id = {
   "hypen": " ",
   "conjunction": " ",
-  "separator": ", ",
+  "separator": " ",
   "negative": "negatif ",
   "decimal": " koma ",
   "prefix": "",
