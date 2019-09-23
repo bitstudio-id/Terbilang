@@ -12,7 +12,7 @@ dependencies:
 #### Pull Request
 > Feel free to submit pull requests for desired changes / features / bug fixes... It makes the maintenance of this code much easier as I no longer use Flutter frequently.
 
-### Usage
+### How to use on number
 Terbilang supports for date (coming soon) and number
 
 ```
@@ -25,6 +25,16 @@ Terbilang supports for date (coming soon) and number
 
     Terbilang _terbilang1 = Terbilang(number: 1290.56);
     print(_terbilang1.result()); // seribu dua ratus sembilan puluh koma lima enam
+```
+
+#### How to change default language
+```
+ //wait for it, it will available on next version :')
+```
+
+#### How to use on date
+```
+ //wait for it, it will available on next version :')
 ```
 
 #### How to use on flutter
