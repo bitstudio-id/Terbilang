@@ -16,15 +16,15 @@ dependencies:
 Terbilang supports for date (coming soon) and number
 
 ```
-    Terbilang _terbilang = Terbilang(number: 10000); // u can use any parameter (string, int, double) numeric on costruct
+Terbilang _terbilang = Terbilang(number: 10000); // u can use any parameter (string, int, double) numeric on costruct
 
-    //Terbilang _terbilang = Terbilang(number: "10000");
-    //Terbilang _terbilang = Terbilang(number: 10000.87);
+//Terbilang _terbilang = Terbilang(number: "10000");
+//Terbilang _terbilang = Terbilang(number: 10000.87);
 
-    print(_terbilang.result()); // sepuluh ribu
+print(_terbilang.result()); // sepuluh ribu
 
-    Terbilang _terbilang1 = Terbilang(number: 1290.56);
-    print(_terbilang1.result()); // seribu dua ratus sembilan puluh koma lima enam
+Terbilang _terbilang1 = Terbilang(number: 1290.56);
+print(_terbilang1.result()); // seribu dua ratus sembilan puluh koma lima enam
 ```
 
 #### How to change default language
