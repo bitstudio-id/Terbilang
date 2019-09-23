@@ -56,7 +56,6 @@ class Terbilang {
     // }
 
     // parse quoted value
-    // List<String> _tmp = double.parse(number.toString()).toString().split(".");
     List<String> _tmp = double.parse(number.toString()).toString().split(".");
     // this._p = int.parse(_tmp[0]);
     // this._f = _tmp[1];
@@ -80,7 +79,6 @@ class Terbilang {
       int hundreds = _number ~/ 100;
       int remainder = _number % 100;
       if (this.prenum != "") {
-        // if (false) {
         String _lead = _number.toString().substring(0, 1);
         _string = (int.parse(_lead) == 1
                 ? this.prenum
