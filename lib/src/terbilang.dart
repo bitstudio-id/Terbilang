@@ -1,3 +1,5 @@
+library terbilang;
+
 import 'dart:math';
 import 'package:terbilang/src/data.dart';
 

@@ -1,4 +1,4 @@
-library terbilang;
+library terbilang_id;
 
 class TerbilangID {
   List<String> _digits = [
