@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:terbilang/src/data.dart';
 
 class Terbilang {
@@ -52,28 +51,25 @@ class Terbilang {
   }
 
   String make({dynamic number}) {
-    // if (!this._isNumeric(number.toString())) {
-    //   print("EXCEPTION::NUMBER_NOT_VALID");
-    //   return "-";
-    // }
-
     // parse quoted value
     List<String> _tmp = double.parse(number.toString()).toString().split(".");
-    // this._p = int.parse(_tmp[0]);
-    // this._f = _tmp[1];
-    // this._p = this.number;
 
     int _number = int.parse(_tmp[0]);
     int _fraction = int.parse(_tmp[1]);
     String _string = "";
 
+    if (_number < 0) {
+      _string += this.negative;
+      _number = _abs(_number);
+    }
+
     if (_number < 21) {
-      _string = this.dictionary[_number];
+      _string += this.dictionary[_number];
     } else if (_number >= 21 && _number < 100) {
       int tens = (_number ~/ 10) * 10;
       int units = _number % 10;
 
-      _string = this.dictionary[tens];
+      _string += this.dictionary[tens];
       if (units != 0) {
         _string += this.hypen + this.dictionary[units];
       }
@@ -82,12 +78,12 @@ class Terbilang {
       int remainder = _number % 100;
       if (this.prenum != "") {
         String _lead = _number.toString().substring(0, 1);
-        _string = (int.parse(_lead) == 1
+        _string += (int.parse(_lead) == 1
                 ? this.prenum
                 : this.dictionary[hundreds] + " ") +
             this.dictionary[100];
       } else {
-        _string = this.dictionary[hundreds] + " " + this.dictionary[100];
+        _string += this.dictionary[hundreds] + " " + this.dictionary[100];
       }
 
       if (remainder != 0) {
@@ -101,11 +97,11 @@ class Terbilang {
 
       if (this.prenum != "") {
         bool _check = _numBaseUnits == 1 && _baseUnit < 1000000;
-        _string =
+        _string +=
             (_check ? this.prenum : this.make(number: _numBaseUnits) + " ") +
                 this.dictionary[_baseUnit];
       } else {
-        _string =
+        _string +=
             this.make(number: _numBaseUnits) + ' ' + this.dictionary[_baseUnit];
       }
 
@@ -127,11 +123,13 @@ class Terbilang {
     String _string = "";
     args.toString().runes.forEach((e) {
       var _c = new String.fromCharCode(e);
-       _string += this.dictionary[int.parse(_c)] + " ";
+      _string += this.dictionary[int.parse(_c)];
+      _string += " ";
     });
 
     return _string.trim();
   }
 
   double _logBase(double arg, double base) => log(arg) / log(base);
+  int _abs(int arg) => arg * (-1);
 }
