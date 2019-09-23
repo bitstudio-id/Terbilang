@@ -7,6 +7,6 @@ void main() {
 
 
   //OLD VERSION
-  prefix0.Terbilang _terbilang_bck = prefix0.Terbilang(number: 999);
-  print(_terbilang_bck.result());
+  prefix0.Terbilang _terbilangBck = prefix0.Terbilang(number: 999);
+  print(_terbilangBck.result());
 }
