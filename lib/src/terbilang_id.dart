@@ -1,6 +1,6 @@
 library terbilang;
 
-class Terbilang {
+class TerbilangID {
   List<String> _digits = [
     "",
     "satu",
@@ -35,9 +35,10 @@ class Terbilang {
   String _result = "";
   String _fraction = "";
 
-  Terbilang({this.number}) {
+  TerbilangID({this.number}) {
     // print(double.parse(this.number.toString()));
-    List<String> _tmp = double.parse(this.number.toString()).toString().split(".");
+    List<String> _tmp =
+        double.parse(this.number.toString()).toString().split(".");
     this._p = int.parse(_tmp[0]);
     this._f = _tmp[1];
     this._p = this.number;

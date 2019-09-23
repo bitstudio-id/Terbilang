@@ -3,7 +3,7 @@ Map id = {
   "conjunction": " ",
   "separator": " ",
   "negative": "negatif ",
-  "decimal": " titik ",
+  "decimal": " koma ",
   "prefix": "",
   "suffix": "",
   "prenum": "se",
@@ -46,8 +46,8 @@ Map id = {
     1000: "ribu",
     1000000: "juta",
     1000000000: "miliar",
-    1000000000000000: "triliun",
-    1000000000000000: "ribu triliun",
-    1000000000000000000: "juta triliun",
+    1000000000000: "triliun",
+    1000000000000000: "kuadriliun",
+    1000000000000000000: "kuintiliun",
   }
 };
