@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:terbilang/src/data.dart';
 
 class Terbilang {
@@ -46,10 +48,10 @@ class Terbilang {
   }
 
   String result() {
-    return this._convert(number: this.number);
+    return this.make(number: this.number);
   }
 
-  String _convert({dynamic number}) {
+  String make({dynamic number}) {
     // if (!this._isNumeric(number.toString())) {
     //   print("EXCEPTION::NUMBER_NOT_VALID");
     //   return "-";
@@ -62,7 +64,7 @@ class Terbilang {
     // this._p = this.number;
 
     int _number = int.parse(_tmp[0]);
-
+    int _fraction = int.parse(_tmp[1]);
     String _string = "";
 
     if (_number < 21) {
@@ -89,10 +91,47 @@ class Terbilang {
       }
 
       if (remainder != 0) {
-        _string += this.conjunction + this._convert(number: remainder);
+        _string += this.conjunction + this.make(number: remainder);
       }
+    } else {
+      int _log = _logBase(double.parse(_number.toString()), 1000).floor();
+      num _baseUnit = pow(1000, _log);
+      int _numBaseUnits = (_number ~/ _baseUnit);
+      int _remainder = _number % _baseUnit;
+
+      if (this.prenum != "") {
+        bool _check = _numBaseUnits == 1 && _baseUnit < 1000000;
+        _string =
+            (_check ? this.prenum : this.make(number: _numBaseUnits) + " ") +
+                this.dictionary[_baseUnit];
+      } else {
+        _string =
+            this.make(number: _numBaseUnits) + ' ' + this.dictionary[_baseUnit];
+      }
+
+      if (_remainder != 0) {
+        _string += _remainder < 100 ? this.conjunction : this.separator;
+        _string += this.make(number: _remainder);
+      }
+    }
+
+    if (_fraction != 0) {
+      _string += this.decimal;
+      _string += _buildFraction(_fraction);
     }
 
     return _string;
   }
+
+  String _buildFraction(int args) {
+    String _string = "";
+    args.toString().runes.forEach((e) {
+      var _c = new String.fromCharCode(e);
+       _string += this.dictionary[int.parse(_c)] + " ";
+    });
+
+    return _string.trim();
+  }
+
+  double _logBase(double arg, double base) => log(arg) / log(base);
 }
