@@ -78,6 +78,11 @@ coming soon
  ... : Container(
      child : Text(Terbilang(number: 10000.87).result())
  );
+ 
+ //how to use on widget with latest build
+ ... : Container(
+     child : Text(Terbilang().make(number: 10000.87))
+ );
 ```
 ### coming soon
 another awesome feature
