@@ -46,10 +46,10 @@ class Terbilang {
   }
 
   String result() {
-    return this.make(number: this.number);
+    return this._convert(number: this.number);
   }
 
-  String make({dynamic number}) {
+  String _convert({dynamic number}) {
     // if (!this._isNumeric(number.toString())) {
     //   print("EXCEPTION::NUMBER_NOT_VALID");
     //   return "-";
@@ -91,7 +91,7 @@ class Terbilang {
       }
 
       if (remainder != 0) {
-        _string += this.conjunction + this.make(number: remainder);
+        _string += this.conjunction + this._convert(number: remainder);
       }
     }
 
