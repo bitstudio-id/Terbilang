@@ -19,7 +19,7 @@ Number to words conversion support multi language.
 ### Add dependency
 ```yaml
 dependencies:
-  terbilang: 1.0.2  #latest version
+  terbilang: 1.0.3  #latest version
 ```
 
 #### Pull Request
@@ -28,6 +28,8 @@ dependencies:
 >Terbilang supports for number, date (coming soon), and romans (coming soon)
 
 ```
+import 'package:terbilang/terbilang.dart';
+...
 Terbilang _terbilang = Terbilang(number: 10000); // u can use any parameter (string, int, double) numeric on costruct
 
 //Terbilang _terbilang = Terbilang(number: "10000");
@@ -42,11 +44,15 @@ print(_terbilang1.result()); // seribu dua ratus sembilan puluh koma lima enam
 #### Prefix & Suffix
 if you set language to id
 ```
+import 'package:terbilang/terbilang.dart';
+...
 Terbilang _terbilang = Terbilang(); // default language is id
 print(_terbilang.make(number : 10000, prefix : "senilai", suffix : "rupiah")); //senilai sepuluh ribu rupiah
 ```
 if you set language to en
 ```
+import 'package:terbilang/terbilang.dart';
+...
 Terbilang _terbilang = Terbilang(lang : "en"); // default language is id
 print(_terbilang.make(number : 6000, suffix : "dollars")); //six hundred dollars
 ```

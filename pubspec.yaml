@@ -1,6 +1,6 @@
 name: terbilang
 description: Convert number & date to words in any language for Flutter/Dart with simple ways, support for multiple language (id, en, other locale will coming soon)
-version: 1.0.2
+version: 1.0.3
 author: Cacing69<cacingworm69@gmail.com>
 homepage: https://github.com/bitstudio-id/Terbilang
 

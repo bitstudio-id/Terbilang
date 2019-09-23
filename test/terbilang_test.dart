@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:terbilang/src/terbilang.dart';
+import 'package:terbilang/terbilang.dart';
 
 void main() {
   group('Terbilang lang:id', () {
