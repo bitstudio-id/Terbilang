@@ -1,6 +1,6 @@
 # Terbilang | Number To Words Conversion For Flutter | Dart
 
-Convert number & date to words in any language for Flutter/Dart, this package is inspired from laravel package (riskihajar/terbilang)[https://github.com/riskihajar/terbilang]
+Convert number & date to words in any language for Flutter/Dart, this package is inspired from laravel package [riskihajar/terbilang](https://github.com/riskihajar/terbilang)
 
 ## Getting Started
 Number to words conversion support multi language.
