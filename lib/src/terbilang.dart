@@ -31,9 +31,8 @@ class Terbilang {
     't': 'trillion',
   };
 
-  Terbilang({this.number}) {
-    this.lang = "id";
-
+  Terbilang({this.number, this.lang = "id"}) {
+    this.lang = lang;
     this.hypen = data[this.lang]["hypen"];
     this.conjunction = data[this.lang]["conjunction"];
     this.separator = data[this.lang]["separator"];
@@ -50,7 +49,7 @@ class Terbilang {
     return this.make(number: this.number);
   }
 
-  String make({dynamic number}) {
+  String make({dynamic number, String prefix, String suffix}) {
     // parse quoted value
     List<String> _tmp = double.parse(number.toString()).toString().split(".");
 
@@ -114,6 +113,14 @@ class Terbilang {
     if (_fraction != 0) {
       _string += this.decimal;
       _string += _buildFraction(_fraction);
+    }
+
+    if (prefix != null) {
+      _string = prefix + " " + _string;
+    }
+
+    if (suffix != null) {
+      _string = _string + " " + suffix;
     }
 
     return _string;

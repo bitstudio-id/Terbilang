@@ -6,8 +6,7 @@ Convert number & date to words in any language for Flutter/Dart, this package is
 Number to words conversion support multi language.
 ### Supported Language
 * `id` | Bahasa Indonesia
-* `en` | English (soon)
-* `pt` | Portuguese (soon)
+* `en` | English
 * soon
 
 ### Feature
@@ -20,37 +19,57 @@ Number to words conversion support multi language.
 ### Add dependency
 ```yaml
 dependencies:
-  terbilang: 0.0.3  #latest version
+  terbilang: 1.0.0  #latest version
 ```
 
 #### Pull Request
 > Feel free to submit pull requests for desired changes / features / bug fixes... It makes the maintenance of this code much easier as I no longer use Flutter frequently.
 
->Terbilang supports for date (coming soon) and number
+>Terbilang supports for number, date (coming soon), and romans (coming soon)
 
 ### Examples
 #### Number To Words
 
 ```
-    Terbilang _terbilang = Terbilang(number: 10000); // u can use any parameter (string, int, double) numeric on costruct
+    Terbilang _terbilang = Terbilang(); // default language is id
+    print(_terbilang.make(number : 10000)); // sepuluh ribu
 
-    //Terbilang _terbilang = Terbilang(number: "10000");
-    //Terbilang _terbilang = Terbilang(number: 10000.87);
+    Terbilang _terbilang = Terbilang(lang : "en");
+    print(_terbilang.make(number : 10000)); // ten thousand
 
-    print(_terbilang.result()); // sepuluh ribu
-
-    Terbilang _terbilang1 = Terbilang(number: 1290.56);
+    Terbilang _terbilang = Terbilang(number: 1290.56);
     print(_terbilang1.result()); // seribu dua ratus sembilan puluh koma lima enam
 ```
 
-#### How to change default language
+#### Prefix & Suffix
+if you set language to id
 ```
- //wait for it, it will available on next version :')
+    Terbilang _terbilang = Terbilang(); // default language is id
+    print(_terbilang.make(number : 10000, prefix : "senilai", suffix : "rupiah")); //senilai sepuluh ribu rupiah
+```
+if you set language to en
+```
+    Terbilang _terbilang = Terbilang(lang : "en"); // default language is id
+    print(_terbilang.make(number : 6000, suffix : "dollars")); //six hundred dollars
 ```
 
-#### How to use on date
+### Number to Roman
 ```
- //wait for it, it will available on next version :')
+coming soon
+```
+
+### Number Shorthand
+```
+coming soon
+```
+
+### DateTime
+```
+coming soon
+```
+### Period
+```
+coming soon
 ```
 
 #### How to use on flutter
