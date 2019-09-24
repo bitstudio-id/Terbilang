@@ -1,7 +1,7 @@
 ## Example
 
 ### Terbilang on FLutter (locale : id)
-![locale : id](/example/images/ss_id.png)
+![locale : id](https://raw.githubusercontent.com/bitstudio-id/Terbilang/master/example/images/ss_id.png)
 ![source code locale : id](/example/images/sc_id.png)
 
 ### Terbilang on FLutter (locale : en)
