@@ -1,10 +1,10 @@
-##Example
+## Example
 
-Terbilang on FLutter
-
+### Terbilang on FLutter (locale : id)
 ![locale : id](/example/images/ss_id.png)
 ![source code locale : id](/example/images/sc_id.png)
 
+### Terbilang on FLutter (locale : en)
 ![locale : en](/example/images/ss_en.png)
 ![source code locale : en](/example/images/sc_en.png)
 ## Getting Started
