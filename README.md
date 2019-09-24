@@ -19,7 +19,7 @@ Number to words conversion support multi language.
 ### Add dependency
 ```yaml
 dependencies:
-  terbilang: 1.0.3  #latest version
+  terbilang: 1.0.4  #latest version
 ```
 
 #### Pull Request
@@ -77,6 +77,9 @@ coming soon
 ```
 
 #### How to use on flutter
+
+>note : i don't have write widget to use for flutter, but if u really need it, u can write and feel free to make pull request
+
 ```
  //how to use on widget
  ... : Container(

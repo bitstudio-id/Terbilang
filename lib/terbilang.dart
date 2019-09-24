@@ -1,21 +1,43 @@
+/// A simple library to convert number or date on dart, which supports multilanguage and other coolstuff,
+/// very easy to use.
+///
+/// A open source project authorized by [http://bitstudio.id](http://bitstudio.id).
 library terbilang;
 
 import 'dart:math';
 
 import 'package:terbilang/data.dart';
 
+/// The common config for the Terbilang instance.
+/// `data.dart` is a instance of [Map]
 class Terbilang {
+  //numeric holder from construct
   dynamic number;
 
+  //the sign (-) used to join words to indicate that they have a combined
   String hypen;
+
+  //the action or an instance of two or more events or things occurring at the same point
   String conjunction;
+
+  //separator.
   String separator;
+
+  //word or statement that expression on negative number
   String negative;
+
+  //word to use on decimal / fraction number
   String decimal;
+
+  //a resource that lists the words of a language (typically in alphanumeric order) and gives their meaning, or gives the equivalent words in a different language
   Map dictionary;
+
+  //a resurce that list short text on number
   Map short;
+
   String prefix;
   String suffix;
+
   String prenum;
 
   String lang;
@@ -48,18 +70,23 @@ class Terbilang {
     this.short = data[this.lang]["short"];
   }
 
+  // get a result if number is identify fron constrctor
   String result() {
     return this.make(number: this.number);
   }
 
   String make({dynamic number, String prefix, String suffix}) {
-    // parse quoted value
+    // parse quoted value and separate to know what os base & fraction number
     List<String> _tmp = double.parse(number.toString()).toString().split(".");
+
+    this.prefix = prefix ?? "";
+    this.suffix = suffix ?? "";
 
     int _number = int.parse(_tmp[0]);
     int _fraction = int.parse(_tmp[1]);
     String _string = "";
 
+    //make it negative and absolute number
     if (_number < 0) {
       _string += this.negative;
       _number = _abs(_number);
@@ -118,15 +145,16 @@ class Terbilang {
       _string += _buildFraction(_fraction);
     }
 
-    if (prefix != null) {
-      _string = prefix + " " + _string;
+    if (this.prefix != null) {
+      _string = this.prefix + " " + _string;
     }
 
-    if (suffix != null) {
-      _string = _string + " " + suffix;
+    // concat current text with suffix
+    if (this.suffix != null) {
+      _string = _string + " " + this.suffix;
     }
 
-    return _string;
+    return _string.trim();
   }
 
   String _buildFraction(int args) {
@@ -140,6 +168,9 @@ class Terbilang {
     return _string.trim();
   }
 
+  // get log base
   double _logBase(double arg, double base) => log(arg) / log(base);
+
+  // get absolute value
   int _abs(int arg) => arg * (-1);
 }
