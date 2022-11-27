@@ -5,7 +5,7 @@ author: Cacing69<cacingworm69@gmail.com>
 homepage: https://github.com/bitstudio-id/Terbilang
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
 
