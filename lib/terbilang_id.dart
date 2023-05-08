@@ -60,7 +60,7 @@ class TerbilangID {
   String _convertFraction(String _number) {
     _number.runes.forEach((e) {
       var _c = new String.fromCharCode(e);
-      this._fraction += this._fractions[_c.toString()] + " ";
+      this._fraction += this._fractions[_c.toString()] ?? "" + " ";
     });
 
     return this._fraction.trim();
