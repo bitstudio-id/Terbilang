@@ -40,7 +40,7 @@ class Terbilang {
 
   String? prenum;
 
-  String lang;
+  String? lang;
 
   Map shortDividers = {
     "kilo": 1000,
@@ -100,7 +100,7 @@ class Terbilang {
 
       _string += this.dictionary?[tens];
       if (units != 0) {
-        _string += this.hypen ?? "" + this.dictionary?[units];
+        _string += "${this.hypen} ${this.dictionary?[units]}";
       }
     } else if (_number >= 100 && _number < 1000) {
       int hundreds = _number ~/ 100;
@@ -116,7 +116,7 @@ class Terbilang {
       }
 
       if (remainder != 0) {
-        _string += this.conjunction ?? "" + this.make(number: remainder);
+        _string += "${this.conjunction}${this.make(number: remainder)}";
       }
     } else {
       int _log = _logBase(double.parse(_number.toString()), 1000).floor();
@@ -127,15 +127,15 @@ class Terbilang {
       if (this.prenum != "") {
         bool _check = _numBaseUnits == 1 && _baseUnit < 1000000;
         _string +=
-            (_check ? this.prenum ?? "" : this.make(number: _numBaseUnits) + " ") +
-                this.dictionary?[_baseUnit];
+            '${_check ? this.prenum : this.make(number: _numBaseUnits) + " "}${this.dictionary?[_baseUnit]}';
       } else {
         _string +=
-            this.make(number: _numBaseUnits) + ' ' + this.dictionary?[_baseUnit];
+            "${this.make(number: _numBaseUnits)} ${this.dictionary?[_baseUnit]}";
       }
 
       if (_remainder != 0) {
-        _string += _remainder < 100 ? this.conjunction ?? "" : this.separator ?? "";
+        _string +=
+            _remainder < 100 ? this.conjunction ?? "" : this.separator ?? "";
         _string += this.make(number: _remainder);
       }
     }
@@ -146,12 +146,12 @@ class Terbilang {
     }
 
     if (this.prefix != null) {
-      _string = this.prefix! + " " + _string;
+      _string = "${this.prefix} $_string";
     }
 
     // concat current text with suffix
     if (this.suffix != null) {
-      _string = _string + " " + this.suffix!;
+      _string = "$_string ${this.suffix}";
     }
 
     return _string.trim();
